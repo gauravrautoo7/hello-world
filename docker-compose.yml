@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  hello-world:
+    build: .
+    image: localrepo
+    container_name: hello-world
+    ports:
+      - "8080:3000"  
