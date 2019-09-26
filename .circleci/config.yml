@@ -10,8 +10,9 @@ jobs:  # which job to execute pre-defined command
       
       - run: echo " hi sandeep "
       - run: |
-        npm i
-        node index.js         
+          ls
+          npm i
+          node index.js         
   
 
 
