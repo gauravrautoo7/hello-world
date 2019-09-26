@@ -1,9 +1,30 @@
 version: '3'
 
+
+
+
 services:
   hello-world:
     build: .
     image: localrepo
     container_name: hello-world
     ports:
-      - "8080:3000"  
+      - "8080:3000"    
+    depends_on:
+      localstack
+
+  localstack:
+    image: localstack/localstack 
+    container_name: localstack
+    restart: on-failure
+    ports:
+      - "4567-4584:4567-4584"
+      - "${PORT_WEB_UI-8081}:${PORT_WEB_UI-8080}"
+    environment:
+      SERVICES: "sqs:4576,sns:4575,dynamodb:4569"
+      DEBUG: "1"
+      DATA_DIR: "/tmp/localstack/data"
+      HOSTNAME: "localstack"
+      HOSTNAME_EXTERNAL: "localstack"
+      USE_SSL: "false"
+      FORCE_NONINTERACTIVE: "true"
