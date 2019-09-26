@@ -4,12 +4,14 @@ jobs:  # which job to execute pre-defined command
   build:
     working_directory: ~/hello-world
     docker:      
-      - image: circleci/node:10.16.0       
+      - image: circleci/node:10.16.0              
     steps: # steps which you want to run
       - checkout  # checkout for ur repo
       
       - run: echo " hi sandeep "
-         
+      - run: |
+        npm i
+        node index.js         
   
 
 
