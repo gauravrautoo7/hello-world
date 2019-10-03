@@ -13,10 +13,10 @@ jobs:  # which job to execute pre-defined command
           echo "yes i am"
 
       - run: echo " hi sandeep "
-      - run: |
-          ls
-          npm i
-          node index.js         
-        background: true    
+      # - run: |
+      #     ls
+      #     npm i
+      #     node index.js         
+      #   background: true    
 
 
