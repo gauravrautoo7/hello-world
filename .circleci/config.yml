@@ -8,11 +8,11 @@ jobs:  # which job to execute pre-defined command
     steps: # steps which you want to run
       - checkout  # checkout for ur repo
       - run:
-        name: chk if i m heare
-        command: |
-          echo "yes i am"
+          name: chk if i m heare
+          command: |
+            echo "yes i am"
 
-      - run: echo " hi sandeep "
+      # - run: echo "hi sandeep "
       # - run: |
       #     ls
       #     npm i
